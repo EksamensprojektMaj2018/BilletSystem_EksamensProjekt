@@ -1,0 +1,10 @@
+language: csharp
+solution: BilletSystem_EksamensProjekt.sln
+mono: none
+dotnet: 2.1.4
+script:
+ - dotnet restore
+notifications:
+  slack:
+    slack: 1stesemesterw2018:tOKxscOf1vVk8tEcnwyxQXHP
+    on_success: always
