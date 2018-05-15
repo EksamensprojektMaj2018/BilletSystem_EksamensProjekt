@@ -8,5 +8,6 @@
         private string _test4;
         private string _test5;
         private string _test6;
+        private string _test7;
     }
 }
