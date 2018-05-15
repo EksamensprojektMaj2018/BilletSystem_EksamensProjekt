@@ -2,6 +2,6 @@
 {
     public class bestilling
     {
-        
+        private string _test;
     }
 }
