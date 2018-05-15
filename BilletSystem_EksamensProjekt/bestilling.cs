@@ -6,5 +6,6 @@
         private string _test2;
         private string _test3;
         private string _test4;
+        private string _test5;
     }
 }
