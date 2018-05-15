@@ -4,5 +4,5 @@ mono: none
 dotnet: 2.1.4
 script:
  - dotnet restore
- notifications:
+notifications:
    slack: 1stesemesterw2018:tOKxscOf1vVk8tEcnwyxQXHP
