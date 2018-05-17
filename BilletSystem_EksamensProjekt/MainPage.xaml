@@ -11,7 +11,6 @@
     <Page.Resources>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="24"/>
-            <Setter Property="MinWidth" Value="2000"></Setter>
             <Setter Property="Margin" Value="5,5,5,5"/>
         </Style>
         <Style x:Key="TextBoxStyle" TargetType="TextBox">
@@ -22,8 +21,12 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel Orientation="Horizontal" Background="DimGray">
-        <ListView ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie, Mode=TwoWay}">
+    <Grid Background="DimGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:movie_showtime">
                     <StackPanel Orientation="Horizontal">
@@ -38,7 +41,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackPanel Orientation="Horizontal" Background="White">
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="White">
             <StackPanel Margin="20,20,20,20">
                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
                     <TextBlock Text ="Title:"/>
@@ -59,6 +62,6 @@
                 
             </StackPanel>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 
 </Page>
