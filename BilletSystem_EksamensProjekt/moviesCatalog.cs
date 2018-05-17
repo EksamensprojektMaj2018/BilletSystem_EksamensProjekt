@@ -9,7 +9,7 @@ namespace BilletSystem_EksamensProjekt
         private List<movies> _movies;
         private movies _selectedMovie;
 
-        public movies()
+        public moviesCatalog()
         {
             _movies = new List<movies>();
             _movies.Add(new movies("Avengers: Infinity War", "Dette er bare en superhelte film", "20/4-18"));
