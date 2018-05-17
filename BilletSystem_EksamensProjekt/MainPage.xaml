@@ -57,11 +57,14 @@
                     <TextBlock Text ="Realese dato:"/>
                     <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Realese}"/>
                 </StackPanel>
-                
-                <!--<ComboBox  Header="Colors" PlaceholderText="Spille tider" Width="200">
-                    <x:String></x:String>
-                    <x:String>2 </x:String>
-                </ComboBox>-->
+                <ListView ItemsSource="{Binding Tid}">
+                    <ListView.DataContext>
+                        <local:TidspunktCatalog/>
+                    </ListView.DataContext>
+                    <!--<TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding Tid}"/>-->
+
+                </ListView>
+
 
             </StackPanel>
         </StackPanel>

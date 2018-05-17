@@ -25,5 +25,10 @@
         }
 
         #endregion
+
+        public override string ToString()
+        {
+            return Tid;
+        }
     }
 }

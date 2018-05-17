@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace BilletSystem_EksamensProjekt
 {
-    public class TidspunktCatalog
+    public class TidspunktCatalog : INotifyPropertyChanged
     {
         #region Instance Field
 
