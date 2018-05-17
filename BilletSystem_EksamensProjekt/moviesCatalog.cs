@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace BilletSystem_EksamensProjekt
 {
-    public class moviesCatalog
+    public class moviesCatalog : INotifyPropertyChanged
     {
         private List<movies> _movies;
         private movies _selectedMovie;
