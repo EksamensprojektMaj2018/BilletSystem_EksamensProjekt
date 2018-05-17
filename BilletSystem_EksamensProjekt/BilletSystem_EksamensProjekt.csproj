@@ -105,6 +105,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sal.cs" />
+    <Compile Include="salCatalog.cs" />
     <Compile Include="seats.cs" />
     <Compile Include="Tidspunkt.cs" />
     <Compile Include="TidspunktCatalog.cs" />
