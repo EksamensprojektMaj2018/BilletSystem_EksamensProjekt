@@ -22,9 +22,9 @@
             get { return _realese; }
         }
 
-        public movies(string Title, string description, string realese)
+        public movies(string title, string description, string realese)
         {
-            _title = Title;
+            _title = title;
             _description = description;
             _realese = realese;
         }
