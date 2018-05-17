@@ -3,13 +3,13 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 namespace BilletSystem_EksamensProjekt
 {
-    public class salCatalog
+    public class salCatalog : INotifyPropertyChanged
     {
         #region Instance Field
 
         private List<sal> _sale;
         private sal _selectedSal;
-        private sal _selectedSeats;
+       
 
         #endregion
 
@@ -24,16 +24,17 @@ namespace BilletSystem_EksamensProjekt
             _sale.Add(new sal("sal2"));
             _sale.Add(new sal("sal3"));
 
+            _selectedSal = _sale[0];
         }
         #endregion
 
         #region Properties For Databinding
-        public List<sal> sal
+        public List<sal> Sal
         {
             get { return _sale; }
         }
 
-        public sal selectedSal
+        public sal SelectedSal
         {
             get { return _selectedSal; }
             set
@@ -43,12 +44,12 @@ namespace BilletSystem_EksamensProjekt
 
             }
         }
-        public int selectedSeats
+        public sal NoOfSeats
         {
-            get { return selectedSeats; }
+            get { return NoOfSeats; }
             set
             {
-                selectedSeats = value;
+                NoOfSeats = value;
                 OnPropertyChanged();
             }
         }

@@ -8,16 +8,15 @@ namespace BilletSystem_EksamensProjekt
     {
         #region Instance Field
         private string _sale;
-        private string _noOfSeats;
 
         #endregion
 
         #region constructer
 
-        public sal(string sale, string noOfSeats)
+        public sal(string sale)
         {
             _sale = sale;
-            _noOfSeats = noOfSeats;
+            
         }
 
         #endregion
@@ -30,18 +29,8 @@ namespace BilletSystem_EksamensProjekt
             get { return _sale; }
         }
 
-        public string NoOfSeats
-        {
-            get { return _noOfSeats; }
-        }
+        public int NoOfSeats { get; set; }
         #endregion
-       
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
