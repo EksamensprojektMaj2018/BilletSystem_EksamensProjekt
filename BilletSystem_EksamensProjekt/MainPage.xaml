@@ -64,6 +64,14 @@
                     <!--<TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding Tid}"/>-->
 
                 </ListView>
+                <ListView ItemsSource="{Binding sal}">
+                    
+                    <ListView.DataContext>
+                        <local:salCatalog/>
+                    </ListView.DataContext>
+                    <!--<TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding Tid}"/>-->
+
+                </ListView>
 
 
             </StackPanel>

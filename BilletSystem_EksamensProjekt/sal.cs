@@ -14,10 +14,10 @@ namespace BilletSystem_EksamensProjekt
 
         #region constructer
 
-        public sal(string sale, string noOfSeats)
+        public sal(string sale)
         {
             _sale = sale;
-            _noOfSeats = noOfSeats;
+            //_noOfSeats = noOfSeats;
         }
 
         #endregion
@@ -30,18 +30,23 @@ namespace BilletSystem_EksamensProjekt
             get { return _sale; }
         }
 
-        public string NoOfSeats
-        {
-            get { return _noOfSeats; }
-        }
+        //public string NoOfSeats
+        //{
+        //    get { return _noOfSeats; }
+        //}
         #endregion
-       
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
+        public override string ToString()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return Sale;
         }
     }
 }
