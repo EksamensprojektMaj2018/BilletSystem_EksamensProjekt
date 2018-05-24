@@ -80,9 +80,18 @@
                         <local:salCatalog/>
                     </ListView.DataContext>
                     <!--<TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding Tid}"/>-->
-
+                
                 </ListView>
 
+
+                
+                <ListView>
+                    <ListView.DataContext>
+                        <local:bestilling/>
+                    </ListView.DataContext>
+                    <Button Content="Bestil en billet" Command="{Binding AddOneCommand }"/>
+                    <TextBlock Text="{Binding BilleterBestilt}"/>
+                </ListView>
 
             </StackPanel>
         </StackPanel>
