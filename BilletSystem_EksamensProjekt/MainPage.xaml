@@ -15,15 +15,23 @@
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="Margin" Value="5,5,5,5"/>
         </Style>
+        <Style x:Key="TextBlockStyle1" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="5,5,5,5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
         <Style x:Key="TextBoxStyle" TargetType="TextBox">
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="Width" Value="300"/>
             <Setter Property="Margin" Value="5,5,5,5"/>
             <Setter Property="IsReadOnly" Value="True"/>
         </Style>
+        <Style TargetType="ListViewItem">
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
     </Page.Resources>
 
-    <Grid Background="DimGray">
+    <Grid Background="SteelBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="8*"/>
@@ -46,17 +54,18 @@
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="White">
             <StackPanel Margin="20,20,20,20">
                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
-                    <TextBlock Text ="Title:"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Title:"/>
                     <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Title}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
-                    <TextBlock Text ="Beskrivelse:"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Beskrivelse:"/>
                     <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Description}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
-                    <TextBlock Text ="Realese dato:"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Realese dato:"/>
                     <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Realese}"/>
                 </StackPanel>
+                <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Tidspunkter:"/>
                 <ListView ItemsSource="{Binding Tid}">
                     <ListView.DataContext>
                         <local:TidspunktCatalog/>
@@ -64,8 +73,9 @@
                     <!--<TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding Tid}"/>-->
 
                 </ListView>
+                <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Sal(e):"/>
                 <ListView ItemsSource="{Binding sal}">
-                    
+
                     <ListView.DataContext>
                         <local:salCatalog/>
                     </ListView.DataContext>
