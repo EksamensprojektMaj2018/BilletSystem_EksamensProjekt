@@ -25,6 +25,8 @@ namespace BilletSystem_EksamensProjekt
         public MainPage()
         {
             this.InitializeComponent();
+
         }
+
     }
 }
