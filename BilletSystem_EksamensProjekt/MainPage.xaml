@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <local:moviesCatalog/>
+        <local:ForestillingerCatalog/>
     </Page.DataContext>
     <Page.Resources>
         <Style x:Key="TextBlockStyle" TargetType="TextBlock">
@@ -36,13 +36,13 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie, Mode=TwoWay}">
+        <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Forestillinger}" SelectedItem="{Binding SelectedForestillinger, Mode=TwoWay}">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:movies">
+                <DataTemplate x:DataType="local:Forestillinger">
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Margin="10,10,10,10">
-                            
-                            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="{Binding Movies.Title}" HorizontalAlignment="Center"/>
                         </StackPanel>
                         <StackPanel Margin="10,10,10,10">
                         </StackPanel>
@@ -51,40 +51,32 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <!--<ListView ItemsSource="{Binding Forestillinger}">-->
+
+
+
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="White">
             <StackPanel Margin="20,20,20,20">
                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
                     <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Title:"/>
-                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Title}"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedForestillinger.Movies.Title}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
                     <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Beskrivelse:"/>
-                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Description}"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedForestillinger.Movies.Description}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
                     <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Realese dato:"/>
-                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Realese}"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedForestillinger.Movies.Realese}"/>
                 </StackPanel>
-                <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Tidspunkter:"/>
-                <ListView ItemsSource="{Binding Tid}">
-                    <ListView.DataContext>
-                        <local:TidspunktCatalog/>
-                    </ListView.DataContext>
-                    <!--<TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding Tid}"/>-->
-
-                </ListView>
-                <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Sal(e):"/>
-                <ListView ItemsSource="{Binding sal}">
-
-                    <ListView.DataContext>
-                        <local:salCatalog/>
-                    </ListView.DataContext>
-                    <!--<TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding Tid}"/>-->
-                
-                </ListView>
-
-
-                
+                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                    <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Sal:"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedForestillinger.Sal.Sale}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                    <TextBlock Style="{StaticResource TextBlockStyle1}" Text ="Tidspunkt:"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedForestillinger.Tidspunkt.Tid}"/>
+                </StackPanel>
                 <ListView>
                     <ListView.DataContext>
                         <local:bestilling/>
@@ -92,11 +84,10 @@
                     <Button Content="+" Command="{Binding AddOneCommand }"/>
                     <Button Content="-" Command="{Binding RemoveOneCommand }"/>
                     <TextBlock Text="{Binding BilleterBestilt}"/>
-                        
-                </ListView>
 
+                </ListView>
             </StackPanel>
         </StackPanel>
-    </Grid>
 
+    </Grid>
 </Page>

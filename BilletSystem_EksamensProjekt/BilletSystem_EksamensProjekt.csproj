@@ -98,7 +98,8 @@
     <Compile Include="bestilling.cs" />
     <Compile Include="CommandBase.cs" />
     <Compile Include="DecreaseTicketByOneCommand.cs" />
-    <Compile Include="Forestilling.cs" />
+    <Compile Include="Forstilinger.cs" />
+    <Compile Include="ForstilingerCatalog.cs" />
     <Compile Include="IncreaseTicketByOneCommand.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
