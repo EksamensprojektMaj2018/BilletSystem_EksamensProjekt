@@ -89,7 +89,8 @@
                     <ListView.DataContext>
                         <local:bestilling/>
                     </ListView.DataContext>
-                    <Button Content="Bestil en billet" Command="{Binding AddOneCommand }"/>
+                    <Button Content="+" Command="{Binding AddOneCommand }"/>
+                    <Button Content="-" Command="{Binding RemoveOneCommand }"/>
                     <TextBlock Text="{Binding BilleterBestilt}"/>
                         
                 </ListView>

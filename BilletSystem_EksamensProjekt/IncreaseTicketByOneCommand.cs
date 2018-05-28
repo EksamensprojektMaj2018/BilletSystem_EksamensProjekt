@@ -16,7 +16,7 @@ namespace BilletSystem_EksamensProjekt
 
         public async override void MyExecute()
         {
-            MessageDialog msgbox = new MessageDialog("Du kan ikke bestille mere end 10 billetter!");
+            MessageDialog msgbox = new MessageDialog("Du kan ikke bestille mere end 10 billetter!", "Hov hov, bandit! Du gjorde noget forkert.");
             _viewModel.BilleterBestilt = _viewModel.BilleterBestilt + 1;
             if (_viewModel.BilleterBestilt == 11)
             {
