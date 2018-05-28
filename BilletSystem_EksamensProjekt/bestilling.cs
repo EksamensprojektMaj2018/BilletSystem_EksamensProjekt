@@ -12,11 +12,6 @@ namespace BilletSystem_EksamensProjekt
         public bestilling()
         {
             _billetterBestilt = 0;
-
-            if (_billetterBestilt > 10)
-            {
-               
-            }
         }
 
         public int BilleterBestilt
@@ -32,6 +27,7 @@ namespace BilletSystem_EksamensProjekt
         public ICommand AddOneCommand
         {
             get { return new IncreaseTicketByOneCommand(this); }
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

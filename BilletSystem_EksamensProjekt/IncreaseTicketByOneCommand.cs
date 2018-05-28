@@ -1,4 +1,8 @@
-﻿namespace BilletSystem_EksamensProjekt
+﻿using System;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Popups;
+
+namespace BilletSystem_EksamensProjekt
 {
     public class IncreaseTicketByOneCommand : CommandBase
     {
@@ -10,9 +14,17 @@
             _viewModel = viewModel;
         }
 
-        public override void MyExecute()
+        public async override void MyExecute()
         {
+            MessageDialog msgbox = new MessageDialog("Du kan ikke bestille mere end 10 billetter!");
             _viewModel.BilleterBestilt = _viewModel.BilleterBestilt + 1;
+            if (_viewModel.BilleterBestilt == 11)
+            {
+                var res = await msgbox.ShowAsync();
+                _viewModel.BilleterBestilt = 10;
+                
+
+            }
         }
     }
 }

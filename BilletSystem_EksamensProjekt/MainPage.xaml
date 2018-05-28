@@ -91,6 +91,7 @@
                     </ListView.DataContext>
                     <Button Content="Bestil en billet" Command="{Binding AddOneCommand }"/>
                     <TextBlock Text="{Binding BilleterBestilt}"/>
+                        
                 </ListView>
 
             </StackPanel>
